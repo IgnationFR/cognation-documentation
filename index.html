@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the Cognation API! You can use our API to access others AI APIs for image recognition, natural language processing&hellip;</p>
+
+<p>We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<h1 id="authentication">Authentication</h1>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: &lt;your-jwt&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">&lt;your-jwt&gt;</code> with your token.</p>
+</blockquote>
+
+<p>Cognation expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code class="prettyprint">Authorization: Bearer &lt;your-jwt&gt;</code></p>
+
+<p>The token is a JSON Web Token (JWT) that you can generate for each project that uses Cognation. To generate it you need a key provided by the developers.</p>
+
+<h1 id="projects">Projects</h1>
+
+<h2 id="get-a-specific-project">Get a Specific Project</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://cognation.io/api/projects/f8c86f98-357d-4eff-8926-146a5b30e146"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your-jwt&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f8c86f98-357d-4eff-8926-146a5b30e146"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed project's token&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"google_service_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed google service account json&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"aws_rekognition_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed aws secrets&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"google_vision_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed google vision token&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-11T12:16:40.534422+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-11T12:16:40.534422+02:00"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific project.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /projects/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-project">Create a Project</h2>
+<pre class="highlight shell tab-shell"><code>curl -POST <span class="s2">"http://cognation.io/api/projects"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: &lt;your-api-key&gt;"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+        "name": "my project",
+        "google_service_token": "&lt;google service account json&gt;",
+        "aws_rekognition": "&lt;AWS Access Key ID&gt;,&lt;AWS Access Secret&gt;",
+        "google_vision_token":"&lt;your google vision api key&gt;"
+      }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43f92291-b546-4424-bd58-5f80b7f00860"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32bb314d438f81b2f138e61e3c8e74c3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"google_service_token"</span><span class="p">:</span><span class="s2">"&lt;hashed service account&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"google_vision_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed google vision token&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"aws_rekognition_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;hashed aws rekognition token&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-12T17:27:27.445245555+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-12T17:27:28.657308446+02:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific project.
+<aside class="notice">The retrieved token should be safely stored, it will be used to authenticate your request on a project and there is no other way to get it</aside></p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /projects</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name you want for your project</td>
+<td>true</td>
+<td>string</td>
+</tr>
+<tr>
+<td>google_service_token</td>
+<td>The json account file to authorize Cognation to create buckets</td>
+<td>true</td>
+<td>string</td>
+</tr>
+<tr>
+<td>aws_rekognition_token</td>
+<td>The AWS secrets with permissions for Rekogntion</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>google_vision_token</td>
+<td>The Google Vision API key</td>
+<td>false</td>
+<td>string</td>
+</tr>
+</tbody></table>
+
+<h1 id="requests">Requests</h1>
+
+<h2 id="concept">Concept</h2>
+
+<h2 id="create-a-request">Create a Request</h2>
+<pre class="highlight shell tab-shell"><code>curl -POST <span class="s2">"http://cognation.io/api/projects/&lt;project-ID&gt;/requests?token=&lt;project-token&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: &lt;your-api-key&gt;"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+        "data": "https://storage.googleapis.com/cognation-testing-images/obama-macron.jpg",
+        "data_type": "url",
+        "services": ["AWS", "Google"],
+        "feature": "LabelsDetection"
+      }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"AWS"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"Confidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.29360961914062</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Human"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Google"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"labelAnnotations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a request.
+<aside class="notice">The retrieved token should be safely stored, it will be used to authenticate your request on a project and there is no other way to get it</aside></p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /projects/&lt;project-ID&gt;/requests</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>The project related to the project you get after creating the project</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>The image you want to process. It could be a base64 encoded string or a url</td>
+<td>true</td>
+<td>string</td>
+</tr>
+<tr>
+<td>data_type</td>
+<td>This type of data you choose to send</td>
+<td>true</td>
+<td>enum(DataType)</td>
+</tr>
+<tr>
+<td>services</td>
+<td>List of all the AI services providers you want a response from</td>
+<td>true</td>
+<td><string> array</td>
+</tr>
+<tr>
+<td>feature</td>
+<td>The process you want to get from the services</td>
+<td>true</td>
+<td>enum(ImageFeature)</td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Cognation API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
