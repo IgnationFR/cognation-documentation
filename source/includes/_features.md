@@ -2,7 +2,7 @@
 
 This is all the AI features that are available.
 
-enum(ImageFeatures) | enum(TextFeatures)
+enum(ImageFeatures) | enum(TextFeatures) 
 ----------- | -----------
 LabelsDetection |
 FacesDetection |
