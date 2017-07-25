@@ -1,17 +1,13 @@
-# Requests
-
-A request represents AI processing on data from multiple [services](#services).
-
-## Create a Request
+## Text
 
 ```shell
-curl -POST "http://cognation.io/api/projects/<project-ID>/requests?token=<project-token>" \
+curl -POST "http://cognation.io/api/projects/<project-ID>/process/text?token=<project-token>" \
   -H "Authorization: <your-api-key>" \
   -d '{
-        "data": "https://storage.googleapis.com/cognation-testing-images/obama-macron.jpg",
+        "data": "",
         "data_type": "url",
         "services": ["AWS", "Google"],
-        "feature": "LabelsDetection"
+        "feature": ""
       }'
 ```
 
@@ -19,27 +15,13 @@ curl -POST "http://cognation.io/api/projects/<project-ID>/requests?token=<projec
 
 ```json
 {
-  "AWS": {
-    "Labels": [
-      {
-        "Confidence": 99.29360961914062,
-        "Name": "Human"
-      }
-    ]
-  },
-  "Google": [
-      {
-        "mid": "/m/03gkb0",
-        "description": "socialite",
-        "score": 0.6829214
-      }
-    ]
+
 }
 ```
 
 ### HTTP Request
 
-`POST /projects/<project-ID>/requests`
+`POST /projects/<project-ID>/process/text`
 
 
 ### Query Parameters
@@ -56,4 +38,4 @@ Parameter | Description | Required  | Type
 data | The image you want to process| true | string
 data_type | This type of data you choose to send | true | [enum(DataType)](#data-types)
 services | List of all the AI services providers you want a response from | true | [[enum(Services)](#services)]
-feature | The process you want to get from the services | true | [enum(ImageFeature)](#services)
+feature | The process you want to get from the services | true | [enum(TextFeature)](#features)

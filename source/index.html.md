@@ -8,7 +8,10 @@ includes:
   - introduction
   - authentication
   - projects
-  - requests
+  - processing
+  - processing_image
+  - processing_text
+  - training
   - services
   - features
   - data_types
