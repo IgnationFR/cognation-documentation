@@ -4,10 +4,10 @@
 curl -POST "http://cognation.io/api/projects/<project-ID>/process/text?token=<project-token>" \
   -H "Authorization: <your-api-key>" \
   -d '{
-        "data": "",
-        "data_type": "url",
-        "services": ["AWS", "Google"],
-        "feature": ""
+        "data": "Benoit is a smart guy",
+        "data_type": "text",
+        "services": ["Aylien"],
+        "feature": "EntitesDetection"
       }'
 ```
 
