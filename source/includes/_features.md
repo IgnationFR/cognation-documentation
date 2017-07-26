@@ -16,8 +16,9 @@ AWS       | X | X
 Clarifai  | X | X
 
 
-This is the features that each image processing service implements
+This is the features that each text processing service implements
 
 Services |  Entities Detection | Sentiment Analysis
 -----------|----------- | -----------
 Aylien    | X | X
+IBM | X | X

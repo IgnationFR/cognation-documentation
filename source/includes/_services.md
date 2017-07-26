@@ -8,3 +8,4 @@ Google | X |
 AWS | X |
 ClarifAI | X |
 Aylien | | X
+IBM | | X

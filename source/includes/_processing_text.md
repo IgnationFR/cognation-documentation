@@ -6,7 +6,7 @@ curl -POST "http://cognation.io/api/projects/<project-ID>/process/text?token=<pr
   -d '{
         "data": "Benoit is a smart guy",
         "data_type": "text",
-        "services": ["Aylien"],
+        "services": ["Aylien", "IBM"],
         "feature": "EntitesDetection"
       }'
 ```
