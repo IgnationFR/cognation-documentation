@@ -355,12 +355,12 @@ curl <span class="s2">"api_endpoint_here"</span>
 </tr>
 </tbody></table>
 
-          <h1 id="requests">Requests</h1>
+          <h1 id="processing">Processing</h1>
 
 <p>A request represents AI processing on data from multiple <a href="#services">services</a>.</p>
 
-<h2 id="create-a-request">Create a Request</h2>
-<pre class="highlight shell tab-shell"><code>curl -POST <span class="s2">"http://cognation.io/api/projects/&lt;project-ID&gt;/requests?token=&lt;project-token&gt;"</span> <span class="se">\</span>
+          <h2 id="image">Image</h2>
+<pre class="highlight shell tab-shell"><code>curl -POST <span class="s2">"http://cognation.io/api/projects/&lt;project-ID&gt;/process/image?token=&lt;project-token&gt;"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: &lt;your-api-key&gt;"</span> <span class="se">\</span>
   -d <span class="s1">'{
         "data": "https://storage.googleapis.com/cognation-testing-images/obama-macron.jpg",
@@ -392,7 +392,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 </span></code></pre>
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST /projects/&lt;project-ID&gt;/requests</code></p>
+<p><code class="prettyprint">POST /projects/&lt;project-ID&gt;/process/image</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -442,9 +442,84 @@ curl <span class="s2">"api_endpoint_here"</span>
 <td>feature</td>
 <td>The process you want to get from the services</td>
 <td>true</td>
-<td><a href="#services">enum(ImageFeature)</a></td>
+<td><a href="#features">enum(ImageFeature)</a></td>
 </tr>
 </tbody></table>
+
+          <h2 id="text">Text</h2>
+<pre class="highlight shell tab-shell"><code>curl -POST <span class="s2">"http://cognation.io/api/projects/&lt;project-ID&gt;/process/text?token=&lt;project-token&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: &lt;your-api-key&gt;"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+        "data": "Benoit is a smart guy",
+        "data_type": "text",
+        "services": ["Aylien"],
+        "feature": "EntitesDetection"
+      }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /projects/&lt;project-ID&gt;/process/text</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>The project related to the project you get after creating the project</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>The image you want to process</td>
+<td>true</td>
+<td>string</td>
+</tr>
+<tr>
+<td>data_type</td>
+<td>This type of data you choose to send</td>
+<td>true</td>
+<td><a href="#data-types">enum(DataType)</a></td>
+</tr>
+<tr>
+<td>services</td>
+<td>List of all the AI services providers you want a response from</td>
+<td>true</td>
+<td>[<a href="#services">enum(Services)</a>]</td>
+</tr>
+<tr>
+<td>feature</td>
+<td>The process you want to get from the services</td>
+<td>true</td>
+<td><a href="#features">enum(TextFeature)</a></td>
+</tr>
+</tbody></table>
+
+          <h1 id="training">Training</h1>
 
           <h1 id="services">Services</h1>
 
@@ -454,7 +529,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <tr>
 <th>enum(Services)</th>
 <th>Image Processing</th>
-<th>NLU</th>
+<th>Text Processing</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -472,6 +547,11 @@ curl <span class="s2">"api_endpoint_here"</span>
 <td>X</td>
 <td></td>
 </tr>
+<tr>
+<td>Aylien</td>
+<td></td>
+<td>X</td>
+</tr>
 </tbody></table>
 
           <h1 id="features">Features</h1>
@@ -486,15 +566,15 @@ curl <span class="s2">"api_endpoint_here"</span>
 </thead><tbody>
 <tr>
 <td>LabelsDetection</td>
-<td></td>
+<td>EntitiesDetection</td>
 </tr>
 <tr>
 <td>FacesDetection</td>
-<td></td>
+<td>SentimentAnalysis</td>
 </tr>
 </tbody></table>
 
-<p>This is the features that each service implements</p>
+<p>This is the features that each image processing service implements</p>
 
 <table><thead>
 <tr>
@@ -520,9 +600,27 @@ curl <span class="s2">"api_endpoint_here"</span>
 </tr>
 </tbody></table>
 
+<p>This is the features that each image processing service implements</p>
+
+<table><thead>
+<tr>
+<th>Services</th>
+<th>Entities Detection</th>
+<th>Sentiment Analysis</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Aylien</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody></table>
+
           <h1 id="data-types">Data Types</h1>
 
-<p>The data you want to process is always a string but can take severals form:</p>
+<h2 id="image">Image</h2>
+
+<p>All possible types for image processing.</p>
 
 <table><thead>
 <tr>
@@ -532,11 +630,27 @@ curl <span class="s2">"api_endpoint_here"</span>
 </thead><tbody>
 <tr>
 <td>url</td>
-<td>the URL of the image/text</td>
+<td>The URL of the image</td>
 </tr>
 <tr>
 <td>blob</td>
-<td>Base64 encoded image/voice</td>
+<td>Base64 encoded image</td>
+</tr>
+</tbody></table>
+
+<h2 id="text">Text</h2>
+
+<p>All possible types for text processing.</p>
+
+<table><thead>
+<tr>
+<th>enum(DataType)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>A long string you want to process</td>
 </tr>
 </tbody></table>
 
