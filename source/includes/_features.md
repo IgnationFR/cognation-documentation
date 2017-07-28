@@ -22,3 +22,5 @@ Services |  Entities Detection | Sentiment Analysis
 -----------|----------- | -----------
 Aylien    | X | X
 IBM | X | X
+ParallelDots | X | X
+Google | X | X
