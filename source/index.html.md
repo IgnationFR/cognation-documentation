@@ -11,10 +11,12 @@ includes:
   - processing
   - processing_image
   - processing_text
+  - processing_speech
   - training
   - services
   - features
   - data_types
+  - languages
   - errors
 
 search: true

@@ -2,10 +2,10 @@
 
 This is all the AI features that are available.
 
-enum(ImageFeatures) | enum(TextFeatures)
------------ | -----------
-LabelsDetection | EntitiesDetection
-FacesDetection | SentimentAnalysis
+enum(ImageFeatures) | enum(TextFeatures) | enum(TextFeatures)
+----------- | -----------| -----------
+LabelsDetection | EntitiesDetection | Transcription
+FacesDetection | SentimentAnalysis |
 
 This is the features that each image processing service implements
 
@@ -24,3 +24,10 @@ Aylien    | X | X
 IBM | X | X
 ParallelDots | X | X
 Google | X | X
+
+This is the features that each speech processing service implements
+
+Services |  Transcription
+-----------|-----------
+IBM | X
+Google | X

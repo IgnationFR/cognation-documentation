@@ -7,7 +7,7 @@ curl -POST "http://cognation.io/api/projects/<project-ID>/process/text?token=<pr
         "data": "Benoit is a smart guy",
         "data_type": "text",
         "services": ["Aylien", "IBM"],
-        "feature": "EntitesDetection"
+        "features": ["EntitesDetection", "SentimentAnalysis"]
       }'
 ```
 
@@ -38,4 +38,4 @@ Parameter | Description | Required  | Type
 data | The image you want to process| true | string
 data_type | This type of data you choose to send | true | [enum(DataType)](#data-types)
 services | List of all the AI services providers you want a response from | true | [[enum(Services)](#services)]
-feature | The process you want to get from the services | true | [enum(TextFeature)](#features)
+features | List of all the process you want to get from the services | true | [[enum(TextFeature)](#features)]

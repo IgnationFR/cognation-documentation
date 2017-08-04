@@ -1,13 +1,14 @@
-## Image
+## Speech
 
 ```shell
-curl -POST "http://cognation.io/api/projects/<project-ID>/process/image?token=<project-token>" \
+curl -POST "http://cognation.io/api/projects/<project-ID>/process/speech?token=<project-token>" \
   -H "Authorization: <your-api-key>" \
   -d '{
-        "data": "https://storage.googleapis.com/cognation-testing-images/obama-macron.jpg",
+        "data": "https://storage.googleapis.com/cloud-samples-tests/speech/brooklyn.flac",
         "data_type": "url",
-        "services": ["AWS", "Google"],
-        "features": ["LabelsDetection"]
+        "services": [IBM"],
+        "features": ["Transcription"],
+        "language": "en-US"
       }'
 ```
 
@@ -15,29 +16,28 @@ curl -POST "http://cognation.io/api/projects/<project-ID>/process/image?token=<p
 
 ```json
 {
-  "LabelsDetection": {
-    "AWS": {
-      "Labels": [
-        {
-          "Confidence": 99.29360961914062,
-          "Name": "Human"
-        }
-      ]
-    },
-    "Google": [
-        {
-          "mid": "/m/03gkb0",
-          "description": "socialite",
-          "score": 0.6829214
-        }
-      ]
+  "Transcription" : {
+    "IBM": {
+       "results": [
+          {
+             "alternatives": [
+                {
+                   "confidence": 0.95,
+                   "transcript": "how old is the Brooklyn Bridge "
+                }
+             ],
+             "final": true
+          }
+       ],
+       "result_index": 0
+    }
   }
 }
 ```
 
 ### HTTP Request
 
-`POST /projects/<project-ID>/process/image`
+`POST /projects/<project-ID>/process/speech`
 
 
 ### Query Parameters
@@ -51,7 +51,8 @@ token | The project related to the project you get after creating the project | 
 
 Parameter | Description | Required  | Type
 --------- | ----------- |-----------|-----------
-data | The image you want to process| true | string
+data | The record you want to process| true | string
 data_type | This type of data you choose to send | true | [enum(DataType)](#data-types)
 services | List of all the AI services providers you want a response from | true | [[enum(Services)](#services)]
 features | List of all the process you want to get from the services | true | [[enum(ImageFeature)](#features)]
+language | The language of the record | true | [enum(Language)](#languages)
