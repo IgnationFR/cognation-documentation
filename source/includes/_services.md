@@ -10,3 +10,4 @@ ClarifAI | X | |
 Aylien | | X |
 IBM | | X | X
 ParallelDots | | X |
+Microsoft | X | |

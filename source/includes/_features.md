@@ -2,7 +2,7 @@
 
 This is all the AI features that are available.
 
-enum(ImageFeatures) | enum(TextFeatures) | enum(TextFeatures)
+enum(ImageFeatures) | enum(TextFeatures) | enum(SpeechFeatures)
 ----------- | -----------| -----------
 LabelsDetection | EntitiesDetection | Transcription
 FacesDetection | SentimentAnalysis |
@@ -14,7 +14,7 @@ Services |  Labels Detection | Faces Detection
 Google    | X | X
 AWS       | X | X
 Clarifai  | X | X
-
+Microsoft | X | X
 
 This is the features that each text processing service implements
 
