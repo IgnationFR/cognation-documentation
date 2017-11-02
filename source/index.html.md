@@ -16,6 +16,7 @@ includes:
   - services
   - features
   - data_types
+  - microsoft_zones
   - languages
   - errors
 

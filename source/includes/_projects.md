@@ -42,8 +42,19 @@ Parameter | Description | Required  | Type
 --------- | ----------- |-----------|-----------
 name | The name you want for your project | true | string
 google_service_token | The json account file to authorize Cognation to create buckets| true | string
-aws_rekognition_token | The AWS secrets with permissions for Rekogntion | false | string
-google_vision_token | The Google Vision API key | false | string
+microsoft_services_zone | The **zone** where your Azure Cognitive Services is | false | [enum(MicrosoftZone)](#microsoft-zones)
+google_vision_token | The Google Vision **API key** | false | string
+google_text_token | A Google **service account json** with permissions for Natural Language API | false
+google_speech_token | A Google **service account json** with permissions for Speech API| false | string
+ibm_text_token | The Watson Natural Language Understanding **API key** | false | string
+ibm_image_token | The Watson Visual Recognition **API key** | false | string
+aws_rekognition_token | **Access Key ID** and **Secret Access Key** of a user with permissions for AWS Rekogntion service joined with a comma | false | string
+microsoft_image_labels_token | **One of the two keys** of Azure Computer Vision API | false | string
+microsoft_image_faces_token | **One of the two keys** of Azure Faces API| false | string
+clarifai_image_token | **API key** linked to a application | false | string
+aylien_text_token | **App ID** and **Key** joined with a comma | false | string
+parallel_dots_text_token | **API key** received by email | false | string
+ibm_speech_token | **Username** and **password** of Watson Speech to Text joined by a comma | false | string
 
 ## Get a Specific Project
 
