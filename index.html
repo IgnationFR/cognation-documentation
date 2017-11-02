@@ -304,14 +304,80 @@ curl <span class="s2">"api_endpoint_here"</span>
 <td>string</td>
 </tr>
 <tr>
-<td>aws_rekognition_token</td>
-<td>The AWS secrets with permissions for Rekogntion</td>
+<td>microsoft_services_zone</td>
+<td>The <strong>zone</strong> where your Azure Cognitive Services is</td>
+<td>false</td>
+<td><a href="#microsoft-zones">enum(MicrosoftZone)</a></td>
+</tr>
+<tr>
+<td>google_vision_token</td>
+<td>The Google Vision <strong>API key</strong></td>
 <td>false</td>
 <td>string</td>
 </tr>
 <tr>
-<td>google_vision_token</td>
-<td>The Google Vision API key</td>
+<td>google_text_token</td>
+<td>A Google <strong>service account json</strong> with permissions for Natural Language API</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>google_speech_token</td>
+<td>A Google <strong>service account json</strong> with permissions for Speech API</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ibm_text_token</td>
+<td>The Watson Natural Language Understanding <strong>API key</strong></td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ibm_image_token</td>
+<td>The Watson Visual Recognition <strong>API key</strong></td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>aws_rekognition_token</td>
+<td><strong>Access Key ID</strong> and <strong>Secret Access Key</strong> of a user with permissions for AWS Rekogntion service joined with a comma</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>microsoft_image_labels_token</td>
+<td><strong>One of the two keys</strong> of Azure Computer Vision API</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>microsoft_image_faces_token</td>
+<td><strong>One of the two keys</strong> of Azure Faces API</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>clarifai_image_token</td>
+<td><strong>API key</strong> linked to a application</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>aylien_text_token</td>
+<td><strong>App ID</strong> and <strong>Key</strong> joined with a comma</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>parallel_dots_text_token</td>
+<td><strong>API key</strong> received by email</td>
+<td>false</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ibm_speech_token</td>
+<td><strong>Username</strong> and <strong>password</strong> of Watson Speech to Text joined by a comma</td>
 <td>false</td>
 <td>string</td>
 </tr>
